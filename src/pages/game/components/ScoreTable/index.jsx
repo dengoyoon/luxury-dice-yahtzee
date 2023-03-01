@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./score-table.scss";
 
 const useTurn = (initTurn = 1) => {
   const [turn, setTurn] = useState(initTurn);
@@ -28,25 +29,27 @@ const lowerSection = [
 export function ScoreTable() {
   const [turn, addTurn] = useTurn();
   return (
-    <div>
-      <h3>Turn {turn}/13</h3>
+    <div className="paper">
+      <h2 className="turn">Turn {turn} / 13</h2>
       <table 
+        className="score-table"
         border={1}
+        cellPadding={10}
         cellSpacing={0}>
         <thead>
           <tr align="center">
-            <td></td>
-            <th>Me</th>
-            <th>Enemy</th>
+            <td width={110}></td>
+            <th width={60}>Me</th>
+            <th width={60}>Enemy</th>
           </tr>
         </thead>
         <tbody>
           { [...upperSection, ...lowerSection].map(
             (name, index) => (
               <tr key={index} align="center">
-                <th>{name}</th>
-                <td>3</td>
-                <td>1</td>
+                <th align="left">{name}</th>
+                <td></td>
+                <td></td>
               </tr>))
             }
         </tbody>
