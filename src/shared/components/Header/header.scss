@@ -4,6 +4,10 @@ $HEADER_HEIGHT : 70px;
 // $HEADER_BUTTON_WIDTH : 80px;
 
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: $HEADER_HEIGHT;
     background-color: $GREY_292C33;
 
