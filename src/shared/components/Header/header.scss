@@ -19,7 +19,7 @@ $HEADER_HEIGHT : 70px;
     }
 
     &__profile-button {
-        border: 1px solid $GREEN_62C555;
+        border: 0px;
         background-color: $GREEN_62C555;
         font-size: 16px;
         color: $GREY_292C33;
@@ -27,15 +27,25 @@ $HEADER_HEIGHT : 70px;
         border-radius: 20px;
         margin-left: 10px;
         font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $GREEN_45853C;
+        }
     }
 
     &__game-button {
-        border: 1px solid $RED_EC675C;
+        border: 0px;
         background-color: $RED_EC675C;
         font-size: 16px;
         color: $GREY_292C33;
         padding: 8px 14px;
         border-radius: 20px;
         font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $RED_A94C43;
+        }
     }
 }
