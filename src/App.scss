@@ -33,6 +33,10 @@ a {
   margin: 0 auto;
 }
 
+.page {
+  padding-top: $HEADER_HEIGHT;
+}
+
 .flex {
   display: flex;
 }

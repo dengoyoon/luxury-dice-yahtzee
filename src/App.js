@@ -9,7 +9,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <div className="container">
+      <div className="container page">
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/game" element={<Game />}></Route>
