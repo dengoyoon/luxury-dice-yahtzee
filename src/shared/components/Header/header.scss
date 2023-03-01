@@ -1,0 +1,51 @@
+@import "/sass/abstracts/colors";
+
+$HEADER_HEIGHT : 70px;
+// $HEADER_BUTTON_WIDTH : 80px;
+
+.header {
+    height: $HEADER_HEIGHT;
+    background-color: $GREY_292C33;
+
+    .container {
+        height: 100%;
+    }
+
+    &__logo {
+        color: $WHITE;
+        font-size: 24px;
+        font-weight: 700;
+        flex: 1;
+    }
+
+    &__profile-button {
+        border: 0px;
+        background-color: $GREEN_62C555;
+        font-size: 16px;
+        color: $GREY_292C33;
+        padding: 8px 14px;
+        border-radius: 20px;
+        margin-left: 10px;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $GREEN_45853C;
+        }
+    }
+
+    &__game-button {
+        border: 0px;
+        background-color: $RED_EC675C;
+        font-size: 16px;
+        color: $GREY_292C33;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $RED_A94C43;
+        }
+    }
+}
