@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { Dice } from "../Dice";
 
-import "./stage.scss"
+import "./stage.scss";
 
-const getDiceNumber = () =>
-  Math.floor((Math.random() * 6) + 1);
+const getDiceNumber = () => Math.floor((Math.random() * 6) + 1);
 
-const getRandomDices = (number) => [...Array(number === 0 ? 5 : number)].map(_ => getDiceNumber()); 
+const getRandomDices = (number) => 
+  [...Array(number === 0 ? 5 : number)].map(_ => getDiceNumber()); 
 
 const useDice = () => {
   const [rollableDices, setRollableDices] = useState([]);
@@ -21,9 +22,9 @@ const useDice = () => {
   const releaseDice = (selectedIndex, selectedNumber) => {
     setKeepedDices(keepedDices.filter((_, index) => index !== selectedIndex));
     setRollableDices(rollableDices.concat(selectedNumber));
-  }
+  };
 
-  return {rollableDices, keepedDices, rollDices, keepDice, releaseDice};
+  return { rollableDices, keepedDices, rollDices, keepDice, releaseDice };
 }
 
 export function Stage() {
@@ -40,6 +41,12 @@ export function Stage() {
       {keepedDices.map((diceNumber, index) => 
         <li key={index} onClick={() => releaseDice(index, diceNumber)}>{diceNumber}</li>)}
     </ul>
+    <Dice number={1}/>
+    <Dice number={2}/>
+    <Dice number={3}/>
+    <Dice number={4}/>
+    <Dice number={5}/>
+    <Dice number={6}/>
     <button type="button" onClick={rollDices}>Roll</button>
   </div>);
 }
