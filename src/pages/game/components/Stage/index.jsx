@@ -32,21 +32,23 @@ export function Stage() {
 
   return (<div className="stage">
     <div>주사위를 선택해주세요.</div>
-    <ul>
+    <ul className="stage__dices flex">
       {rollableDices.map((diceNumber, index) => 
-        <li key={index} onClick={() => keepDice(index, diceNumber)}>{diceNumber}</li>)}
+        <li key={index}>
+          <Dice 
+            number={diceNumber}
+            onClick={() => keepDice(index, diceNumber)}/>
+        </li>)}
     </ul>
     <div>고른 주사위 목록입니다.</div>
-    <ul>
+    <ul className="stage__dices flex">
       {keepedDices.map((diceNumber, index) => 
-        <li key={index} onClick={() => releaseDice(index, diceNumber)}>{diceNumber}</li>)}
+        <li key={index}>
+          <Dice 
+            number={diceNumber}
+            onClick={() => releaseDice(index, diceNumber)}/>
+        </li>)}
     </ul>
-    <Dice number={1}/>
-    <Dice number={2}/>
-    <Dice number={3}/>
-    <Dice number={4}/>
-    <Dice number={5}/>
-    <Dice number={6}/>
     <button type="button" onClick={rollDices}>Roll</button>
   </div>);
 }

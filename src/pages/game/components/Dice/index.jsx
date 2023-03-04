@@ -9,8 +9,12 @@ import six from "img/six.png";
 
 import "./dice.scss";
 
-export function Dice({number}) {
+export function Dice({number, onClick}) {
   const diceImages = [one, two, three, four, five, six];
 
-  return (<img className="dice" src={diceImages[number - 1]}/>)
+  return (
+    <img 
+      className="dice" 
+      src={diceImages[number - 1]}
+      onClick={onClick}/>);
 }
